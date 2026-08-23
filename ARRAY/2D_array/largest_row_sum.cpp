@@ -3,12 +3,10 @@ using namespace std;
 
 int largest_sum_row(int arr[][100], int row, int column)
 {
-    int largest = 0;
-
+    int largest = INT64_MIN;
     for(int i = 0; i < row; i++)
     {
         int sum = 0;
-
         for(int j = 0; j < column; j++)
         {
             sum = sum + arr[i][j];
@@ -19,10 +17,8 @@ int largest_sum_row(int arr[][100], int row, int column)
             largest = sum;
         }
     }
-
     return largest;
 }
-
 int main()
 {
     int rows, column;
