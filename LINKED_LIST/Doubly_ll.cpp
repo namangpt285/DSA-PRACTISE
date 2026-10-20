@@ -205,7 +205,5 @@ cout<<"Length of doubly LL: "<<getLength(head)<<endl ;
 
 
 return 0;
-
-
 }
 
