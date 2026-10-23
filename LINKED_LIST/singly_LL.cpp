@@ -78,6 +78,44 @@ void InsertAtMiddle(Node* &head,Node* &tail,int position,int d ){
     
 } 
 
+void deleteNode(Node* &head, int value){
+
+    // empty list
+    if(head == NULL){
+        cout<<"List is empty"<<endl;
+        return;
+    }
+
+    // deleting first node
+    if(head->data == value){
+
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+        return;
+    }
+
+    Node* prev = head;
+    Node* curr = head->next;
+
+    while(curr != NULL && curr->data != value){
+
+        prev = curr;
+        curr = curr->next;
+    }
+
+    // value not found
+    if(curr == NULL){
+        cout<<"Value does not exist in list"<<endl;
+        return;
+    }
+
+    // deleting the node
+    prev->next = curr->next;
+    delete curr;
+}
+
+
 void DeleteNode(Node* &head,int position){
 
 
